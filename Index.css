@@ -1,0 +1,310 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nunito:wght@400;600&family=Poppins:wght@600&family=Quicksand:wght@500&family=Raleway:wght@500&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(180deg, #fff0f5, #fdfdfd);
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(15px);
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar h1 {
+  font-size: 1.9rem;
+  font-weight: bold;
+  color: #cb5c86;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: #704f5c;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.navbar nav a:hover {
+  background: #f6ccd7;
+  color: #5e3b4b;
+  box-shadow: 0 4px 10px rgba(245, 185, 200, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Tagline above hero */
+.tagline {
+  text-align: center;
+  padding: 40px 20px 10px;
+  font-size: 1.4rem;
+  color: #a05275;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: transparent;
+  z-index: 2;
+}
+
+.tagline h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  color: #c95d87;
+  margin-bottom: 10px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  padding: 20px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  min-height: auto;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #f78db6 0%, #fbbdd1 40%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: swirl 5s ease-out forwards;
+  z-index: 0;
+  opacity: 0.7;
+  filter: blur(60px);
+  pointer-events: none;
+  box-shadow:
+    0 0 60px 40px rgba(255, 159, 186, 0.4),
+    0 0 100px 60px rgba(255, 180, 200, 0.3);
+}
+
+
+@keyframes swirl {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 0.4;
+  }
+  80% {
+    transform: translate(-50%, -50%) rotate(160deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+.hero-box:hover {
+  box-shadow: 0 10px 40px rgba(245, 185, 200, 0.4);
+}
+
+.hero-title {
+  font-family: 'Abril Fatface', serif;
+  font-size: 4.5rem;
+  color: #c94d82;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.8rem;
+  color: #885f74;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.hero-description {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  max-width: 700px;
+  color: #555;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.btn {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f8c8d0;
+  color: #5e3b4b;
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(245, 185, 200, 0.5);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: #f6a9bd;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(248, 175, 205, 0.4);
+}
+
+/* Divider Line */
+.pastel-divider {
+  width: 80%;
+  margin: 40px auto;
+  height: 2px;
+  background: linear-gradient(to right, #fad0c4, #ffd1ff);
+  border-radius: 50px;
+}
+
+/* Feature Cards */
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 60px 40px;
+  background: #fef6f8;
+}
+
+.feature-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  padding: 30px 25px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  color: #c94d82;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  color: #555;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  background: #fbe3ef;
+  padding: 20px;
+  text-align: center;
+  color: #885f74;
+  font-size: 0.9rem;
+  border-top: 1px solid #ebc2d3;
+}
+
+/* SWIRL EFFECT (Visible + Glowing + Auto-Fade) */
+.swirl-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  transform: translate(-50%, -50%) scale(0.3);
+  background: radial-gradient(circle, #f9c5d1 10%, #f7cfe0 40%, transparent 80%);
+  border-radius: 50%;
+  z-index: 0;
+  animation: swirl 5s ease forwards;
+  opacity: 1;
+  pointer-events: none;
+  filter: blur(60px);
+  box-shadow:
+    0 0 50px 30px rgba(255, 184, 197, 0.2),
+    0 0 100px 50px rgba(248, 169, 204, 0.2);
+}
+
+@keyframes swirl {
+  0% {
+    transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
+    opacity: 0.9;
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(0.9) rotate(90deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.8) rotate(180deg);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .feature-card {
+    width: 100%;
+  }
+  }
