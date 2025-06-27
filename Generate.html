@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Generate - CARA</title>
+  <link rel="stylesheet" href="generate.css" />
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <h1>CARA</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="generate.html">Generate</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Generator Section -->
+  <section class="generate-section">
+    <div class="generate-box">
+      <h2>✨ Caption & Hashtag Generator</h2>
+      <p>Type your idea and let CARA create the perfect caption + hashtags!</p>
+
+      <textarea placeholder="Type your post idea here..."></textarea>
+
+      <button class="btn">Generate</button>
+
+      <!-- Output area (UI only) -->
+      <div class="output-box">
+        <h4>Generated Caption:</h4>
+        <p class="output-text">Your generated caption will appear here...</p>
+
+        <h4>Suggested Hashtags:</h4>
+        <p class="output-text">#your hashtags will appear here</p>
+      </div>
+
+      <!-- Save button -->
+      <button class="save-btn">📄 Save as Document</button>
+    </div>
+  </section>
+
+  <footer>
+    <p> CARA. Your creative partner on Instagram.</p>
+  </footer>
+<script>
+  // Arrays of idea keywords, captions, and hashtags
+  var ideas = ["travel", "food", "fitness", "fashion", "motivation"];
+  var captions = [
+    "Wander often, wonder always 🌍",
+    "Good food = good mood 🍕",
+    "Strong body, stronger mind 💪",
+    "Wear confidence like it's couture ✨",
+    "Dream big. Hustle more. Repeat. 🚀"
+  ];
+  var hashtags = [
+    "#travelgram #wanderlust #exploretheworld",
+    "#foodie #yum #instafood",
+    "#fitlife #workoutvibes #healthylifestyle",
+    "#fashionstyle #ootd #pastelvibes",
+    "#motivation #goals #growthmindset"
+  ];
+
+  function generateContent() {
+    var input = document.querySelector("textarea").value.toLowerCase().trim();
+    var captionOutput = document.querySelectorAll(".output-text")[0];
+    var hashtagOutput = document.querySelectorAll(".output-text")[1];
+    var found = false;
+
+    for (var i = 0; i < ideas.length; i++) {
+      if (input.includes(ideas[i])) {
+        captionOutput.innerText = captions[i];
+        hashtagOutput.innerText = hashtags[i];
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      captionOutput.innerText = "Try using a keyword like travel, food, fitness, etc.";
+      hashtagOutput.innerText = "#creative #content #CARA";
+    }
+  }
+
+  // Only generate button works
+  document.querySelector(".btn").onclick = generateContent;
+
+  // Save button disabled (does nothing)
+  document.querySelector(".save-btn").onclick = function () {
+    alert("Save feature coming soon!"); // optional: you can remove this line too
+  };
+</script>
+</body>
+</html>
