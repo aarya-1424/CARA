@@ -1,3 +1,9 @@
+🤖 Project Creator
+👩‍💻 Aarya Kapoor
+BCA in AI & ML
+Designed for academic presentation on UI/UX + content automation.
+
+
 # CARA
 A Content and Response Agent 
 # CARA: Content and Response Agent
